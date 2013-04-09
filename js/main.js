@@ -1,5 +1,7 @@
 //written by mygoare
 
+String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g, '');};
+
 function getElementsByClass (className, tagName) {
   var classElements = new Array();
   if (tagName == null) {
@@ -92,6 +94,9 @@ function showPopBlock () {
 
   parentUpTo(this, 'list-items').style.zIndex = '1'; // fix ie7 z-index bug
   parentUpTo(this, 'items-detail').nextSibling.nextSibling.nextSibling.nextSibling.style.display = "block";
+
+  // focus on input
+  childDownTo(parentUpTo(this, 'items-detail').nextSibling.nextSibling.nextSibling.nextSibling, 'input-add', 'input').focus();
 }
 
 function hidePop () {
@@ -108,21 +113,29 @@ function saveSkills () {
     return false;
   }
   for (var i=0; i < vals_arr.length; i++) {
-    var del = document.createTextNode("+");
-    var a2 = document.createElement("a");
-    a2.appendChild(del);
-    a2.setAttribute("class", "skills-del");
-    a2.setAttribute("href", "javascript:;");
-    var val = document.createTextNode(vals_arr[i]);
-    var a1 = document.createElement("a");
-    a1.appendChild(val);
-    a1.setAttribute("href", "");
-    var span = document.createElement("span");
-    span.appendChild(a1);
-    span.appendChild(a2);
-    skills_p.appendChild(span);
+    vals_arr[i] = vals_arr[i].trim();
+    if (vals_arr[i] != "") {
+      var del = document.createTextNode("+");
+      var a2 = document.createElement("a");
+      a2.appendChild(del);
+      a2.setAttribute("class", "skills-del");
+      a2.setAttribute("href", "javascript:;");
+      var val = document.createTextNode(vals_arr[i]);
+      var a1 = document.createElement("a");
+      a1.appendChild(val);
+      a1.setAttribute("href", "");
+      var span = document.createElement("span");
+      span.appendChild(a1);
+      span.appendChild(a2);
+      skills_p.appendChild(span);
+    }
   }
+  //rebind
   bindEvent(getElementsByClass('skills-del'), 'click', delSkills);
+  this.previousSibling.previousSibling.value = "";
+
+  parentUpTo(this, 'pop-block').style.display = "none";
+  parentUpTo(this, 'list-items').style.zIndex = '0';
 }
 
 bindEvent(getElementsByClass('del-article'), 'click', delArticle );
