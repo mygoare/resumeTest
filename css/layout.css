@@ -1,0 +1,59 @@
+.container {width:960px; margin:auto;}
+.header {height:100px; position:relative;}
+.header h1 {font-size:36px; line-height:100px;}
+.header h1 a {text-decoration:none;}
+.user-status {position:absolute; right:0px; top:45px;}
+
+.tabs {height:31px;}
+.tabs ul li {float:left;}
+.tabs ul li a {width:70px; height:30px; display:block; text-decoration:none; border-radius:5px 5px 0 0; border:1px solid #ccc; line-height:30px; text-align:center; margin:0px -1px;background-color:#eee; position:relative; z-index:100;}
+.tabs ul li:first-child a {margin:0px 0px -1px;background-color:#fff; border-bottom:none;border-bottom:1px solid #fff;}
+.tabs ul li a:hover {background-color:#fff; border-bottom:none; border-bottom:1px solid #fff;}
+
+.tabs-content {width:958px; min-width:640px; border:1px solid #ccc; height:auto; position:relative; border-radius:0px 5px 5px 5px;}
+
+.tab-article {width:638px; min-width:638px; height:auto; float:left; padding:20px;}
+.list-items {width:628px; min-width:628px; border:1px solid #ccc; border-radius:5px; margin-bottom:20px; padding:5px; box-shadow:0px 1px 3px; position:relative;}
+.list-items:nth-child(even) {background-color:#B7DEC9;}
+.items-icon {display:block; width:80px; height:80px; float:left;}
+.items-detail {padding-left:90px;}
+.title, .skills {line-height:30px;}
+.title {border-bottom:1px solid #ccc;}
+.title strong, .skills strong {font-weight:bold;}
+.skills span {border:1px solid #ccc; border-radius:3px; padding:1px 15px 1px 5px; position:relative; background-color:#eee; font-size:13px;}
+.skills span a {text-decoration:none;}
+.skills-del {position:absolute; top:-7px; right:2px; transform:rotate(45deg); -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg); -ms-transform:rotate(45deg); -o-transform:rotate(45deg);}
+.skills-del:hover {color:#f47400; font-weight:bold;}
+
+.tab-aside {width:239px; border-left:1px solid #ccc; height:auto; float:left; padding:20px;}
+.tab-aside img {width:239px; height:239px;}
+.account-info h2 {border-bottom:1px solid #ccc; line-height:30px; font-size:20px; margin:5px auto 10px;}
+.account-info table tr {line-height:22px;}
+.account-info table tr td:first-child {width:120px; min-width:120px;}
+
+.footer {text-align:center; height:30px;}
+.footer p {font-size:14px; line-height:30px;}
+
+/*pop-block*/
+.pop-block {position:absolute; z-index:100;}
+.pop-dialog {border:1px solid red; border-radius:3px; padding:5px; background-color:#fff;}
+.input-add {display:block;}
+
+/*when screen less than 1024px*/
+@media only screen and (max-width: 1024px) {
+  .container {width:100%;}
+  .tabs-content {width:100%;}
+  .tab-article {width:100%; padding:20px 0px;}
+  .list-items {width:100%;padding:5px 0px;}
+
+  .tab-aside {border-left:none; width:100%; padding:20px 0px;}
+  .avatar {width:40%; float:left;}
+  .account-info {width:60%; float:left;}
+  .account-info table {width:100%;}
+  .account-info table tr {width:100%;}
+  .account-info table tr td:first-child {width:50%;}
+  .account-info table tr td:nth-child(2) {width:50%;}
+}
+
+/*misc*/
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
