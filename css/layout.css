@@ -20,9 +20,9 @@
 .title, .skills {line-height:30px;}
 .title {border-bottom:1px solid #ccc;}
 .title strong, .skills strong {font-weight:bold;}
-.skills span {border:1px solid #ccc; border-radius:3px; padding:1px 15px 1px 5px; position:relative; background-color:#eee; font-size:13px;}
+.skills span {border:1px solid #ccc; border-radius:3px; padding:1px 15px 1px 5px; position:relative; background-color:#eee; font-size:13px; margin:2px;}
 .skills span a {text-decoration:none;}
-.skills-del {position:absolute; top:-7px; right:2px; transform:rotate(45deg); -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg); -ms-transform:rotate(45deg); -o-transform:rotate(45deg);}
+.skills-del {position:absolute; right:2px; transform:rotate(45deg); -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg); -ms-transform:rotate(45deg); -o-transform:rotate(45deg);}
 .skills-del:hover {color:#f47400; font-weight:bold;}
 
 .tab-aside {width:239px; border-left:1px solid #ccc; height:auto; float:left; padding:20px;}
