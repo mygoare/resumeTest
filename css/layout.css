@@ -10,7 +10,7 @@
 .tabs ul li:first-child a {margin:0px 0px -1px;background-color:#fff; border-bottom:none;border-bottom:1px solid #fff;}
 .tabs ul li a:hover {background-color:#fff; border-bottom:none; border-bottom:1px solid #fff;}
 
-.tabs-content {width:958px; min-width:640px; border:1px solid #ccc; height:auto; position:relative; border-radius:0px 5px 5px 5px;}
+.tabs-content {width:958px; min-width:640px; border:1px solid #ccc; height:auto; border-radius:0px 5px 5px 5px;}
 
 .tab-article {width:638px; min-width:638px; height:auto; float:left; padding:20px;}
 .list-items {width:628px; min-width:628px; border:1px solid #ccc; border-radius:5px; margin-bottom:20px; padding:5px; box-shadow:0px 1px 3px; position:relative;}
@@ -35,9 +35,10 @@
 .footer p {font-size:14px; line-height:30px;}
 
 /*pop-block*/
-.pop-block {position:absolute; z-index:100;}
-.pop-dialog {border:1px solid red; border-radius:3px; padding:5px; background-color:#fff;}
-.input-add {display:block;}
+.pop-block {position:absolute; z-index:100; left:100px; top:95px;}
+.pop-dialog {border:1px solid red; border-radius:3px; padding:5px; background-color:#fff; width:410px;}
+.pop-dialog input {margin:2px; float:left;}
+.input-add {display:block; margin:2px 0px; width:380px;}
 
 /*when screen less than 1024px*/
 @media only screen and (max-width: 1024px) {
@@ -57,3 +58,4 @@
 
 /*misc*/
 .clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.hide {display:none;}
