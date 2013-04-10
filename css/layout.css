@@ -56,6 +56,10 @@
   .account-info table tr {width:100%;}
   .account-info table tr td:first-child {width:50%;}
   .account-info table tr td:nth-child(2) {width:50%;}
+
+  .items-icon {min-width:80px; width:10%;}
+  .items-detail {width:85%;}
+  .title, .skills {width:100%;}
 }
 
 /*misc*/
