@@ -98,10 +98,10 @@ function showPopBlock () {
   }
 
   parentUpTo(this, 'list-items').style.zIndex = '1'; // fix ie7 z-index bug
-  parentUpTo(this, 'items-detail').nextSibling.nextSibling.nextSibling.nextSibling.style.display = "block";
+  childDownTo(parentUpTo(this, 'list-items'), 'pop-block', 'div').style.display = "block";
 
   // focus on input
-  childDownTo(parentUpTo(this, 'items-detail').nextSibling.nextSibling.nextSibling.nextSibling, 'input-add', 'input').focus();
+  childDownTo(parentUpTo(this, 'list-items'), 'input-add', 'input').focus();
 }
 
 function hidePop () {
