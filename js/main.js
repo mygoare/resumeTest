@@ -60,13 +60,18 @@ function bindEvent(ele, event, fun){
   if (ele == "") {
     return false;
   }
-  if (event == "click") {
-    if (ele.constructor == Array) {
-      for (var i=0; i < ele.length; i++) {
-        ele[i].onclick = fun;  // 弃用 addEventListener & attachEvent cause of their *this* returned different
+  // ele should always be array
+  if (ele.constructor == Array) {
+    for (var i=0; i < ele.length; i++) {
+      switch (event)
+      {
+        case 'click':
+          ele[i].onclick = fun;  // 弃用 addEventListener & attachEvent cause of their *this* returned different
+          break;
+        case 'blur':
+          ele[i].onblur = fun;
+          break;
       }
-    } else {
-        ele.onclick = fun;
     }
   }
 }
@@ -137,6 +142,8 @@ function saveSkills () {
   parentUpTo(this, 'pop-block').style.display = "none";
   parentUpTo(this, 'list-items').style.zIndex = '0';
 }
+
+//bindEvent(getElementsByClass('input-add'), 'blur', hidePop);
 
 bindEvent(getElementsByClass('del-article'), 'click', delArticle );
 bindEvent(getElementsByClass('skills-del'), 'click', delSkills);
